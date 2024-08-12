@@ -1,5 +1,5 @@
 library(httr2)
-library(tidyverse)
+library(dplyr)
 req <- request("https://newsapi.org/v2/everything") %>%
   req_url_query(
     q = '`"data science"`',
