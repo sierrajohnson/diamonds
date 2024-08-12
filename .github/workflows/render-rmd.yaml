@@ -1,7 +1,8 @@
 name: render
 on:
-  push:
-    branches: main
+#  push:
+#    branches: main
+  workflow-dispatch:
 permissions:
   contents: write
 jobs:
