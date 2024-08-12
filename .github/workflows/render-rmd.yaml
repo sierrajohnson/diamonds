@@ -38,7 +38,7 @@ jobs:
       - name: run script with secret
         run: Rscript newsapi.R
         env:
-          NEWS_API_KEY=${{ secrets.NEWS_API }}
+          NEWS_API_KEY: ${{ secrets.NEWS_API }}
 
       # Publish rmd/ to GitHub pages
       - name: Publish to GitHub pages 🚀
