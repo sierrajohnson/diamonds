@@ -25,7 +25,7 @@ jobs:
       # Render the rmarkdown file into rmd/
       - name: Render Rmarkdown
         shell: Rscript {0}
-        run: rmarkdown::render("MarkdownPlot.Rmd", output_dir = "rmd")
+        run: rmarkdown::render("R/MarkdownPlot.Rmd", output_dir = "rmd")
 
       # Publish rmd/ to GitHub pages
       - name: Publish to GitHub pages 🚀
