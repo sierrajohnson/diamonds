@@ -27,12 +27,18 @@ jobs:
         shell: Rscript {0}
         run: rmarkdown::render("index.Rmd", output_dir = "rmd")
 
-      - name: Set up environment variable
-        run: |
-          echo "NEWS_API_KEY=${{ secrets.NEWS_API }}" >> $GITHUB_ENV
-      # Run new api script
-      - name: Run News API R script
+#      - name: Set up environment variable
+#        run: |
+#          echo "NEWS_API_KEY=${{ secrets.NEWS_API }}" >> $GITHUB_ENV
+#      # Run new api script
+#      - name: Run News API R script
+#        run: Rscript newsapi.R
+
+      # Better way to do the secret
+      - name: run script with secret
         run: Rscript newsapi.R
+        env:
+          NEWS_API_KEY=${{ secrets.NEWS_API }}
 
       # Publish rmd/ to GitHub pages
       - name: Publish to GitHub pages 🚀
