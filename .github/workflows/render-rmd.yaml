@@ -32,8 +32,8 @@ jobs:
           echo "NEWS_API_KEY=${{ secrets.NEWS_API }}" >> $GITHUB_ENV
       # Run new api script
       - name: Run News API R script
-        run: newsapi.R
-        
+        run: Rscript newsapi.R
+
       # Publish rmd/ to GitHub pages
       - name: Publish to GitHub pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4.5.0

@@ -8,5 +8,9 @@ req <- request("https://newsapi.org/v2/everything") %>%
     apiKey = Sys.getenv("NEWS_API_KEY")
   )
 
+cat("Found secret.")
+
 resp <- req_perform(req)
 resp_body_json(resp)
+
+cat("Script complete.")
